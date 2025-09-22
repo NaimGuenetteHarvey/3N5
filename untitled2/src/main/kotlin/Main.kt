@@ -6,7 +6,7 @@ fun Pyramide (args: Array<String>)
 
     for (pyramide in 1..hauteur)
     {
-       println(pyramide)
+        println(pyramide)
 
     }
 
