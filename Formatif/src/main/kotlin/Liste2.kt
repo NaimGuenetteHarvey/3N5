@@ -7,6 +7,12 @@ fun main ()
     val liste = listOf("a","b","c","d","e","f","g","h","i")
     val mots = listOf("allo","bonjour","orange","macaroni")
     val somme = listOf(1,4,6,8,10)
+    //pour le dernier numero
+    val liste3 = listOf("chat", "chien", "rat", "éléphant")
+    val resultat = motsCourtsMajuscules(liste3, 4)
+    println("Liste de départ : $liste3")
+    println("Résultat : $resultat")
+
     println(notesValides(notes))
     println(pairsJusqua(10))
     println(moyenneNotes(notes1))
@@ -16,6 +22,7 @@ fun main ()
     println(filtrerCourts(mots,4))
     println(doublesTriees(notes1))
     println(sommeCumulative(somme))
+
 }
  fun pairsJusqua(n: Int): List<Int>
  {
@@ -80,4 +87,10 @@ fun sommeCumulative(tab: List<Int>): List<Int>
         resultat.add(somme)
     }
     return resultat
+}
+fun motsCourtsMajuscules(mots: List<String>, n: Int): List<String>
+{
+    return mots
+        .filter { it.length <= n }   // garder seulement les mots courts
+        .map { it.uppercase() }      // transformer en majuscules
 }
