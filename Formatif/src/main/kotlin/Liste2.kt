@@ -31,7 +31,7 @@ fun main ()
      {
          throw IllegalArgumentException("n must be greater than 0")
      }
-     return (0..n).filter { it % 2 == 0 }
+     return liste.filter { it % 2 == 0 }
  }
 
 fun notesValides(notes: List<Int>): List<Int>
