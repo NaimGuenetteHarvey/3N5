@@ -1,47 +1,59 @@
 package org.example
-
+import org.jsoup.Jsoup
 
 fun main() {
-//    val url = "https://info.cegepmontpetit.ca/3N5-Prog3/testbot/courrielsDansA.html"
-//    val doc = Jsoup.connect(url).get()
-//    println(doc)
-//    println(doc.select("a"))
-//
-//    //afficher le texte a l'interieur des balises
-//    for (lien in doc.select("a")) {
-//        println(lien.text() + " a pour courriel " + lien.attr("href"))
-//
-//    }
+    val url = "https://info.cegepmontpetit.ca/3N5-Prog3/testbot/courrielsDansA.html"
+    val doc = Jsoup.connect(url).get()
+    println(doc)
+    println(doc.select("a"))
 
-//Extraire les titres
-//    val url = "https://info.cegepmontpetit.ca/3N5-Prog3/testbot/pagesAvecTitre.html"
-//    val doc  = Jsoup.connect(url).get()
-//    println(doc.select("h1"))
+    //afficher le texte a l'interieur des balises
+    for (lien in doc.select("a")) {
+        println(lien.text() + " a pour courriel " + lien.attr("href"))
+
+    }
+
+    fun Extrairelestitres()
+{ val url = "https://info.cegepmontpetit.ca/3N5-Prog3/testbot/pagesAvecTitre.html"
+ val doc  = Jsoup.connect(url).get()
+ println(doc.select("h1"))
+
+}
+
+    fun LienHypertextes()
+    {
+        val url = "https://info.cegepmontpetit.ca/3N5-Prog3/testbot/courrielsDansA.html"
+        val doc = Jsoup.connect(url).get()
+        for (lien in doc.select("a"))
+        {
+            val href = lien.attr("href")
+            if (href.startsWith("https://"))
+            {
+                println(href)
+            }
+        }
+
+    }
 
 
-    // Lien Hypertextes
-//    val url = "https://info.cegepmontpetit.ca/3N5-Prog3/testbot/courrielsDansA.html"
-//    val doc = Jsoup.connect(url).get()
-//    for (lien in doc.select("a"))
+//    fun TableHTML()
 //    {
-//        val href = lien.attr("href")
-//        if (href.startsWith("https://"))
+//        val url = "https://info.cegepmontpetit.ca/3N5-Prog3/testbot/courrielsDansA.html"
+//        val doc = Jsoup.connect(url).get()
+//        val extraire = doc.select("tr")
+//        for (lien in extraire)
 //        {
-//            println(href)
+//            println(lien.select("td").map { it.text() }
+//                if (extraire.isNotEmpty())
+//                {
+////                   Afficher la ligne séparée par |
+//                    println(extraire.joinToString(" | "))
+//                }
+//
+//
 //        }
 //    }
 
-    //TableHTML
-//    val url = "https://info.cegepmontpetit.ca/3N5-Prog3/testbot/courrielsDansA.html"
-//    val doc = Jsoup.connect(url).get()
-//     val extraire = doc.select("tr")
-//     for (lien in extraire)
-//    {
-//      println(lien.select("td").map { it.text() }
-//    if (cellules.isNotEmpty()) {
-//         Afficher la ligne séparée par |
-//        println(cellules.joinToString(" | "))
-//    }
 
 //
     //Mots Clés dans un paragraphe
